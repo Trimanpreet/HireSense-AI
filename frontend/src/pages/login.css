@@ -1,0 +1,298 @@
+
+/* ===== HireSense AI - Soft 3D Login Design ===== */
+
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 24px;
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(190, 213, 255, 0.9), transparent 40%),
+    radial-gradient(ellipse at 85% 80%, rgba(221, 197, 255, 0.85), transparent 42%),
+    linear-gradient(135deg, #eef5ff 0%, #f5efff 50%, #e9f6ff 100%);
+}
+
+/* Large floating 3D-style shapes */
+.login-page::before,
+.login-page::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 42% 58% 63% 37% / 42% 39% 61% 58%;
+  filter: blur(1px);
+  animation: floatShape 9s ease-in-out infinite;
+}
+
+.login-page::before {
+  width: 340px;
+  height: 340px;
+  top: -95px;
+  left: -75px;
+  background: linear-gradient(145deg, #b8d8ff, #d8c4ff 70%, #f1eaff);
+  box-shadow:
+    inset -18px -20px 45px rgba(117, 113, 213, 0.13),
+    0 25px 70px rgba(116, 140, 220, 0.16);
+}
+
+.login-page::after {
+  width: 420px;
+  height: 420px;
+  right: -130px;
+  bottom: -150px;
+  background: linear-gradient(145deg, #c3eaff, #d9caff 65%, #f5e9ff);
+  box-shadow:
+    inset -20px -20px 50px rgba(106, 126, 211, 0.15),
+    0 25px 70px rgba(139, 124, 218, 0.18);
+  animation-delay: -4s;
+}
+
+@keyframes floatShape {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(18px, 25px, 0) rotate(12deg);
+  }
+}
+
+/* Login card */
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  z-index: 1;
+  padding: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 26px;
+
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  box-shadow:
+    0 25px 70px rgba(83, 91, 153, 0.13),
+    0 5px 18px rgba(112, 123, 190, 0.07);
+
+  animation: cardAppear 0.7s ease both;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Brand logo */
+.login-logo {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 19px;
+  border-radius: 19px;
+
+  background: linear-gradient(135deg, #dceaff, #e8dcff);
+  color: #6654ce;
+
+  box-shadow:
+    0 8px 20px rgba(111, 99, 204, 0.13),
+    inset 0 1px 3px rgba(255, 255, 255, 0.9);
+}
+
+.login-card h1 {
+  color: #252849;
+  font-size: 30px;
+  font-weight: 750;
+  letter-spacing: -0.8px;
+  margin: 0;
+}
+
+.login-subtitle {
+  color: #8589a5;
+  font-size: 13px;
+  margin-top: 7px;
+  letter-spacing: 0.2px;
+}
+
+.login-card h2 {
+  color: #292c4b;
+  font-size: 22px;
+  margin-top: 32px;
+  margin-bottom: 8px;
+  letter-spacing: -0.4px;
+}
+
+.login-description {
+  color: #8589a5;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+/* Success and error message */
+.login-message {
+  background: #e9f8ef;
+  color: #21834b;
+  border: 1px solid #c9efd7;
+  padding: 12px 14px;
+  border-radius: 11px;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 18px;
+  margin-bottom: 12px;
+}
+
+/* Input fields */
+.login-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #e1e4f0;
+  padding: 14px 15px;
+  border-radius: 12px;
+  margin-top: 15px;
+  color: #8589a5;
+  background: rgba(255, 255, 255, 0.8);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.login-input:focus-within {
+  border-color: #9889e8;
+  box-shadow: 0 0 0 4px rgba(143, 124, 225, 0.12);
+  transform: translateY(-1px);
+}
+
+.login-input input,
+.login-input input:focus,
+.login-input input:active,
+.login-input input:-webkit-autofill {
+  border: none;
+  outline: none;
+  width: 100%;
+  min-width: 0;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: transparent !important;
+  color: #292c4b !important;
+  -webkit-text-fill-color: #292c4b !important;
+  caret-color: #7565d6;
+  opacity: 1;
+}
+
+.login-input input::placeholder {
+  color: #a1a4b8 !important;
+  -webkit-text-fill-color: #a1a4b8 !important;
+  opacity: 1;
+}
+
+/* Submit button */
+.login-button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(110deg, #8273df, #6c83e5);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(112, 105, 211, 0.22);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.login-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(112, 105, 211, 0.3);
+  filter: brightness(1.04);
+}
+
+.login-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.login-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Register / sign-in switch */
+.login-switch {
+  text-align: center;
+  margin-top: 25px;
+  color: #8589a5;
+  font-size: 13px;
+}
+
+.login-switch button {
+  border: none;
+  background: none;
+  color: #7163d0;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 5px;
+  transition: color 0.2s ease;
+}
+
+.login-switch button:hover {
+  color: #5142b4;
+  text-decoration: underline;
+}
+
+/* Mobile layout */
+@media (max-width: 520px) {
+  .login-page {
+    padding: 18px;
+  }
+
+  .login-card {
+    padding: 30px 24px;
+    border-radius: 22px;
+  }
+
+  .login-card h1 {
+    font-size: 27px;
+  }
+
+  .login-page::before {
+    width: 230px;
+    height: 230px;
+  }
+
+  .login-page::after {
+    width: 270px;
+    height: 270px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .login-page::before,
+  .login-page::after,
+  .login-card {
+    animation: none;
+  }
+
+  .login-input,
+  .login-button,
+  .login-switch button {
+    transition: none;
+  }
+}
+

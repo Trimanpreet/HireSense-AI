@@ -1,0 +1,400 @@
+
+.screening-page {
+  width: 100%;
+}
+
+.screening-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.screening-heading h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.screening-heading p {
+  margin: 0;
+  color: #777b8d;
+}
+
+.screening-icon {
+  background: #eeedff;
+  color: #5146e5;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.screening-control-card,
+.screening-results-card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
+}
+
+.screening-control-card h2,
+.screening-results-heading h2 {
+  margin: 0 0 10px;
+  font-size: 19px;
+}
+
+.screening-control-card p,
+.screening-results-heading p {
+  color: #777b8d;
+  font-size: 14px;
+}
+
+.screening-controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.screening-controls select {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #dedfea;
+  border-radius: 8px;
+  background: white;
+  color: #252941;
+}
+
+.screening-controls button,
+.csv-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #5146e5;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.screening-controls button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.screening-results-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.screening-results-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.screening-empty {
+  text-align: center;
+  padding: 45px 15px;
+  color: #85899a;
+}
+
+.screening-empty h3 {
+  color: #252941;
+}
+
+.screening-table-wrapper {
+  overflow-x: auto;
+}
+
+.screening-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.screening-table th,
+.screening-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #ececf2;
+  font-size: 14px;
+}
+
+.screening-table th {
+  color: #777b8d;
+}
+
+.screening-success,
+.screening-error {
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+}
+
+.screening-success {
+  background: #e9f8ef;
+  color: #187344;
+}
+
+.screening-error {
+  background: #fff0f0;
+  color: #b42318;
+}
+
+.screening-spinner {
+  animation: screening-spin 1s linear infinite;
+}
+
+@keyframes screening-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 700px) {
+  .screening-controls {
+    flex-direction: column;
+  }
+
+  .screening-results-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+
+/* AI Score Explanation */
+
+.score-explanation-section {
+  margin-top: 30px;
+}
+
+.score-explanation-section h2 {
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.explanation-subtitle {
+  color: #777b8d;
+  margin-bottom: 20px;
+}
+
+.explanation-card {
+  background: #f9f9ff;
+  border: 1px solid #e5e4f5;
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 20px;
+}
+
+.explanation-card h3 {
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+
+.score-components {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.score-component {
+  background: white;
+  padding: 16px;
+  border-radius: 9px;
+  border: 1px solid #ececf2;
+}
+
+.score-component span {
+  display: block;
+  color: #777b8d;
+  font-size: 13px;
+  margin-bottom: 9px;
+}
+
+.score-component strong {
+  color: #5146e5;
+  font-size: 19px;
+}
+
+.explanation-card h4 {
+  margin-bottom: 12px;
+}
+
+.explanation-list {
+  padding-left: 22px;
+  color: #555a70;
+  line-height: 1.9;
+}
+
+.score-disclaimer {
+  background: #eeedff;
+  color: #5146e5;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+  .score-components {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ===== Screening Page Visual Improvements ===== */
+
+.screening-heading h1 {
+  letter-spacing: -0.6px;
+}
+
+.screening-heading p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.screening-icon {
+  transition: transform 0.2s ease;
+}
+
+.screening-icon:hover {
+  transform: translateY(-3px);
+}
+
+.screening-control-card,
+.screening-results-card {
+  border: 1px solid #eeeef4;
+}
+
+.screening-control-card h2,
+.screening-results-heading h2 {
+  letter-spacing: -0.3px;
+}
+
+.screening-controls select {
+  outline: none;
+  font-size: 13px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.screening-controls select:focus {
+  border-color: #6955d9;
+  box-shadow: 0 0 0 3px rgba(105, 85, 217, 0.08);
+}
+
+.screening-controls button,
+.csv-button {
+  background: #6955d9;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.screening-controls button:hover:not(:disabled),
+.csv-button:hover {
+  background: #5642c2;
+  transform: translateY(-2px);
+}
+
+.screening-table {
+  min-width: 700px;
+}
+
+.screening-table th {
+  background: #f8f8fc;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.screening-table td {
+  color: #45495d;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.screening-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.screening-table tbody tr:hover {
+  background: #faf9ff;
+}
+
+.explanation-card {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.explanation-card:hover {
+  border-color: #d5d0fa;
+  box-shadow: 0 5px 18px rgba(35, 35, 70, 0.04);
+}
+
+.explanation-card h3 {
+  letter-spacing: -0.2px;
+}
+
+.score-component {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.score-component:hover {
+  transform: translateY(-2px);
+  border-color: #d5d0fa;
+}
+
+.score-component strong {
+  color: #6955d9;
+}
+
+.explanation-list {
+  font-size: 13px;
+}
+
+.score-disclaimer {
+  margin-bottom: 0;
+}
+
+.screening-success,
+.screening-error {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .screening-heading {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .screening-icon {
+    padding: 11px;
+  }
+
+  .screening-control-card,
+  .screening-results-card {
+    padding: 17px;
+  }
+
+  .screening-controls button,
+  .csv-button {
+    width: 100%;
+  }
+
+  .score-components {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .explanation-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .score-components {
+    grid-template-columns: 1fr;
+  }
+}

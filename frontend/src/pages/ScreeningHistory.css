@@ -1,0 +1,278 @@
+
+.history-page {
+  width: 100%;
+}
+
+.history-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.history-heading h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  color: #252941;
+}
+
+.history-heading p {
+  margin: 0;
+  color: #777b8d;
+}
+
+.history-refresh-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 17px;
+  border: none;
+  border-radius: 8px;
+  background: #5146e5;
+  color: white;
+  cursor: pointer;
+}
+
+.history-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
+}
+
+.history-card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.history-card-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  font-size: 19px;
+}
+
+.history-card-heading span {
+  color: #777b8d;
+  font-size: 13px;
+}
+
+.history-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.history-table th,
+.history-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #eeeeF3;
+  white-space: nowrap;
+}
+
+.history-table th {
+  color: #777b8d;
+  font-size: 13px;
+  font-weight: 600;
+  background: #f8f8fc;
+}
+
+.history-table td {
+  color: #44495f;
+  font-size: 14px;
+}
+
+.history-table td strong {
+  color: #5146e5;
+}
+
+.history-top-candidate {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #b7791f;
+  font-weight: 600;
+}
+
+.history-empty {
+  text-align: center;
+  padding: 45px 15px;
+  color: #777b8d;
+}
+
+.history-empty h3 {
+  color: #252941;
+}
+
+.history-error {
+  background: #fff0f0;
+  color: #c53030;
+  padding: 13px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 650px) {
+  .history-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .history-card {
+    padding: 15px;
+  }
+}
+
+
+/* Detailed session results */
+
+.history-view-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid #5146e5;
+  border-radius: 7px;
+  background: white;
+  color: #5146e5;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.history-view-button:hover {
+  background: #eeedff;
+}
+
+.history-view-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.session-details {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid #eeeeF3;
+}
+
+.session-details > h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.session-result-card {
+  padding: 20px;
+  margin-bottom: 18px;
+  border: 1px solid #e5e4f5;
+  border-radius: 11px;
+  background: #f9f9ff;
+}
+
+.session-result-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.session-result-heading h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.session-result-heading p {
+  margin: 0;
+  color: #777b8d;
+  font-size: 13px;
+}
+
+.session-result-score {
+  color: #5146e5;
+  font-size: 21px;
+}
+
+.session-skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.session-skills > div {
+  padding: 14px;
+  border-radius: 8px;
+  background: white;
+}
+
+.session-skills strong {
+  color: #252941;
+  font-size: 13px;
+}
+
+.session-skills p {
+  color: #62677a;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.session-result-card h4 {
+  margin: 18px 0 12px;
+}
+
+.session-score-breakdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.session-score-breakdown span {
+  padding: 12px;
+  background: white;
+  border: 1px solid #ececf2;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.session-explanation {
+  padding-left: 22px;
+  color: #555a70;
+  line-height: 1.8;
+  font-size: 13px;
+}
+
+.session-disclaimer {
+  padding: 12px;
+  background: #eeedff;
+  color: #5146e5;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+  .session-score-breakdown {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .session-skills {
+    grid-template-columns: 1fr;
+  }
+
+  .session-result-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

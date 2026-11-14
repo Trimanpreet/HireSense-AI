@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+pyjwt
+python-multipart
+scikit-learn
+pymupdf
+python-docx
+pytest
+httpx
+python-dotenv
